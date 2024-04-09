@@ -1,5 +1,6 @@
 import Navbar from "../navbar/Navbar"
 import homeCSS from './Home.module.css'
+import { Link } from "react-router-dom"
 
 function Home() {
     return (
@@ -18,7 +19,7 @@ function Home() {
                     Here, you'll craft your cohort of intrepid vault dwellers, ready to brave the treacherous 
                     wasteland beyond our vault's safety!</p>
                     <hr />
-                    <button className={homeCSS.button}>{">"} CLICK HERE TO GET STARTED</button>
+                    <Link to="/create"><button className={homeCSS.button}>{">"} CLICK HERE TO GET STARTED</button></Link>
                 </div>
             </div>
         </>
