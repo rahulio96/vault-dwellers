@@ -1,12 +1,13 @@
 import navbarCSS from './Navbar.module.css'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
     return (
         <nav>
             <ul>
-                <li><a href=''>Home</a></li>
-                <li><a href=''>Create</a></li>
-                <li><a href=''>Gallery</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/create">Create</Link></li>
+                <li><Link to="/gallery">Gallery</Link></li>
             </ul>
         </nav>
     )
