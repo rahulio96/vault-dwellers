@@ -11,11 +11,13 @@ nav ul {
     top: 0; 
     right: 0; 
     left: 0;
+    background-color: #36538b;
 }
 
 nav ul li {
     display: inline-block;
     padding: 0px 20px;
+    font-size: large;
 }
 
 nav ul li a {
@@ -26,4 +28,10 @@ nav ul li a {
 nav ul li a:hover {
     transition: all 0.3s ease 0s;
     color:white;
+}
+
+@media only screen and (max-width: 768px) {
+    nav ul {
+        padding: 10px;
+    }
 }

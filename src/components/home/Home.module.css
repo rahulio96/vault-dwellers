@@ -1,0 +1,81 @@
+@font-face {
+    font-family: pipboy;
+    src: url("../../assets/fsex300-webfont.woff");
+}
+
+.title {
+    color: #ebc852;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.terminal {
+    background-color: 	#000300;
+    padding: 20px;
+    border-radius: 25px;
+    border: 3px solid #ebc852;
+    color: #00ee00;
+    font-family: pipboy;
+    width: 65%;
+    font-size: large;
+    text-align: left;
+}
+
+.button {
+    color: #00ee00;
+    border: none;
+    border-radius: none;
+    padding: none;
+    background-color: #000300;
+    font-size: large;
+    width: 100%;
+    margin: 0 auto;
+    margin-block-end: 1em;
+    cursor: default;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+button:hover {
+    background-color: #00ee00;
+    color: #000300;
+}
+
+.sysInfo p {
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    margin: 0 auto;
+}
+
+hr {
+    border-color: #00ee00;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        font-size: small;
+        margin-bottom: 0;
+    }
+
+    .terminal {
+        width: 100%;
+    }
+
+    .logo {
+        margin-top: 40px;
+    }
+}
