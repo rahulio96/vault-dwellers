@@ -16,9 +16,10 @@ div p {
 }
 
 .boy {
-    width: 200px;
+    width: 18%;
     height: auto;
     margin: 0;
+    display: flex;
 }
 
 .button {
@@ -54,6 +55,7 @@ div p {
     display: flex;
     text-align: center;
     justify-content: space-between;
+    gap: 5px;
 }
 
 .number {
@@ -70,7 +72,7 @@ div p {
 }
 
 .desc {
-    text-align: center;
+    text-align: left;
 }
 
 .statBtn {
@@ -78,4 +80,31 @@ div p {
     height: 20px;
     display: flex;
     align-self: center;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .stats {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .desc {
+        font-size: small;
+        text-align: center;
+    }
+
+    .boy {
+        width: 130px;
+    }
+
+    div p {
+        font-size: medium;
+        text-align: center;
+    }
+
+    .terminal {
+        width: 98%;
+    }
 }

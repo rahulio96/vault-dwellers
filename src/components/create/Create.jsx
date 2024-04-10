@@ -4,6 +4,10 @@ import createCSS from "./Create.module.css"
 
 function Create() {
 
+    const defaultMsg = "Overseer, it's time to assign SPECIAL stats to your custom Vault Dweller. "
+                        + "Choose wisely, as these stats will determine their abilities in the harsh Wasteland. "
+                        + "Will you prioritize Strength, Perception, Endurance, Charisma, Intelligence, Agility, or Luck? "
+                        + "Your decision will shape the future of your Vault Dweller."
     const maxPointPool = 33
     const maxPoints = 10
     const minPoints = 1
@@ -48,7 +52,7 @@ function Create() {
         ["Luck", luc, setLuc, "Raising your luck will raise all of your skills a little. Having a high Luck will also improve your critical chance with all weapons."]
     ]
 
-    const [desc, setDesc] = useState(null)
+    const [desc, setDesc] = useState(defaultMsg)
 
     const [isHover, setIsHover] = useState(false)
 
@@ -59,7 +63,7 @@ function Create() {
 
     const handleMouseLeave = () => {
         setIsHover(false)
-        setDesc(null)
+        setDesc(defaultMsg)
     }
 
     return (
@@ -103,7 +107,7 @@ function Create() {
                     )}
                     
                     </div>
-                    <div className={createCSS.desc} style={{ opacity: isHover ? 1 : 0 }}>{desc}</div>
+                    <div className={createCSS.desc}>{desc}</div>
                     <img className={createCSS.boy} src="vault-boy-2.png"/>
                 </div>
             </div>
