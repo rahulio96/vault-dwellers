@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 function Home() {
     return (
         <>
-            <Navbar />
             <div className={homeCSS.container}>
                 <img className={homeCSS.logo} src="vault-tec-logo.png" />
                 <h1 className={homeCSS.title}>Welcome to Vault 98</h1>

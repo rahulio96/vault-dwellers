@@ -1,0 +1,22 @@
+.terminal {
+    background-color: #000300;
+    padding: 20px;
+    border-radius: 25px;
+    border: 3px solid #ebc852;
+    color: #00ee00;
+    font-family: pipboy;
+    width: 90%;
+    font-size: large;
+    text-align: center;
+}
+
+div p {
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.boy {
+    width: 225px;
+    margin: 0;
+
+}

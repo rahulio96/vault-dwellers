@@ -3,6 +3,11 @@
   src: url("./assets/Futura-Medium.woff");
 }
 
+@font-face {
+  font-family: pipboy;
+  src: url("./assets/fsex300-webfont.woff");
+}
+
 :root {
   font-family: vault;
   line-height: 1.5;
