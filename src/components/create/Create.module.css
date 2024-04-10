@@ -16,7 +16,8 @@ div p {
 }
 
 .boy {
-    width: 225px;
+    width: 200px;
+    height: auto;
     margin: 0;
 }
 
@@ -29,12 +30,17 @@ div p {
     font-size: large;
     margin: 0;
     cursor: default;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px;
+    margin: 2px;
     text-align: left;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border: 1px solid transparent;
+}
+
+.button:hover {
+    border: 1px solid #00ee00;
 }
 
 .btnContainer {
@@ -45,9 +51,14 @@ div p {
 
 .stats {
     display: flex;
-    justify-content: space-around;
+    text-align: center;
+    justify-content: space-between;
 }
 
 .number {
     margin-left: 20px;
+}
+
+.desc {
+    text-align: center;
 }

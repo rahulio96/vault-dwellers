@@ -11,23 +11,29 @@ function Create() {
     const [agi, setAgi] = useState(1)
     const [luc, setLuc] = useState(1)
 
-    /*
-        "Endurance" : end,
-        "Charisma" : cha,
-        "Intelligence" : int,
-        "Agility" : agi,
-        "Luck" : luc
-    */
     let statList = [
-        ["Strength", str],
-        ["Perception", per],
-        ["Endurance", end],
-        ["Charisma", cha],
-        ["Intelligence", int],
-        ["Agility", agi],
-        ["Luck", luc]
-
+        ["Strength", str, "Strength is a measure of your raw physical power. It affects how much you can carry, the power of all melee attacks, and your effectiveness with many heavy weapons."],
+        ["Perception", per, "A high Perception grants a bonus to the Explosives, Lockpick and Energy Weapons, and determines when red compass markings appear (which indicate threats)."],
+        ["Endurance", end, "Endurance is a measure of your overall physical fitness. A high Endurance gives bonuses to health, environmental resistances, and the Survival and Unarmed skills."],
+        ["Charisma", cha, "Having a high Charisma will improve people's disposition towards you, and give bonuses to both the Barter and Speech skills."],
+        ["Intelligence", int,"Intelligence affects the Science, Repair and Medicine skills. The higher your Intelligence, the more Skill Points you'll be able to distribute when you level up."],
+        ["Agility", agi, "Agility affects your Guns and Sneak skills, and the number of Action Points available for V.A.T.S."],
+        ["Luck", luc, "Raising your luck will raise all of your skills a little. Having a high Luck will also improve your critical chance with all weapons."]
     ]
+
+    const [desc, setDesc] = useState(null)
+
+    const [isHover, setIsHover] = useState(false)
+
+    const handleMouseEnter = (stat) => {
+        setIsHover(true)
+        setDesc(stat[2])
+    }
+
+    const handleMouseLeave = () => {
+        setIsHover(false)
+        setDesc(null)
+    }
 
     return (
         <>
@@ -48,13 +54,14 @@ function Create() {
 
                     {statList.map((stat, index) => 
                         
-                        <div key={index} className={createCSS.button}>
+                        <div key={index} className={createCSS.button} onMouseEnter={() => handleMouseEnter(stat)} onMouseLeave={handleMouseLeave}>
                             {stat[0]}
                             <div className={createCSS.number}>{stat[1]}</div>
                         </div>
                     )}
                     
                     </div>
+                    <div className={createCSS.desc} style={{ opacity: isHover ? 1 : 0 }}>{desc}</div>
                     <img className={createCSS.boy} src="vault-boy-2.png"/>
                 </div>
             </div>
