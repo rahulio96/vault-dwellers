@@ -11,6 +11,9 @@ function Create() {
     const [agi, setAgi] = useState(1)
     const [luc, setLuc] = useState(1)
 
+    const [hoverPlus, setHoverPlus] = useState(null)
+    const [hoverMin, setHoverMin] = useState(null)
+
     let statList = [
         ["Strength", str, "Strength is a measure of your raw physical power. It affects how much you can carry, the power of all melee attacks, and your effectiveness with many heavy weapons."],
         ["Perception", per, "A high Perception grants a bonus to the Explosives, Lockpick and Energy Weapons, and determines when red compass markings appear (which indicate threats)."],
@@ -56,7 +59,20 @@ function Create() {
                         
                         <div key={index} className={createCSS.button} onMouseEnter={() => handleMouseEnter(stat)} onMouseLeave={handleMouseLeave}>
                             {stat[0]}
-                            <div className={createCSS.number}>{stat[1]}</div>
+                            <div className={createCSS.number}>
+                                <img className={createCSS.statBtn} 
+                                    src={index === hoverMin ? 'minus-hover.png' : 'minus.png'} 
+                                    onMouseEnter={() => setHoverMin(index)}
+                                    onMouseLeave={() => setHoverMin(null)}
+                                />
+                                <div className={createCSS.statNum}>{stat[1]}</div>
+                                
+                                <img className={createCSS.statBtn} 
+                                    src={index === hoverPlus ? 'plus-hover.png' : 'plus.png'} 
+                                    onMouseEnter={() => setHoverPlus(index)}
+                                    onMouseLeave={() => setHoverPlus(null)}
+                                />
+                            </div>
                         </div>
                     )}
                     

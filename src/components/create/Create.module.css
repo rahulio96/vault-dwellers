@@ -41,6 +41,7 @@ div p {
 
 .button:hover {
     border: 1px solid #00ee00;
+    background-color: #008e002a;
 }
 
 .btnContainer {
@@ -57,8 +58,24 @@ div p {
 
 .number {
     margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    font-size: larger;
+    align-items: center;
+}
+
+.statNum {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .desc {
     text-align: center;
+}
+
+.statBtn {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    align-self: center;
 }
