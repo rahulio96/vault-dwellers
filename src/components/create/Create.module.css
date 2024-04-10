@@ -18,5 +18,36 @@ div p {
 .boy {
     width: 225px;
     margin: 0;
+}
 
+.button {
+    color: #00ee00;
+    border: none;
+    border-radius: none;
+    padding: none;
+    background-color: #000300;
+    font-size: large;
+    margin: 0;
+    cursor: default;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btnContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+}
+
+.number {
+    margin-left: 20px;
 }

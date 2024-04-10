@@ -44,7 +44,7 @@
     text-align: left;
 }
 
-button:hover {
+.button:hover {
     background-color: #00ee00;
     color: #000300;
 }
