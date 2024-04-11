@@ -45,6 +45,13 @@ div p {
     background-color: #008e002a;
 }
 
+.remaining {
+    display: flex;
+    margin: 2px;
+    padding: 5px;
+    font-size: large;
+}
+
 .btnContainer {
     display: flex;
     flex-direction: column;

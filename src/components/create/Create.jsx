@@ -105,6 +105,8 @@ function Create() {
                             </div>
                         </div>
                     )}
+
+                    <div className={createCSS.remaining}>Remaining Points: {pool}</div>
                     
                     </div>
                     <div className={createCSS.desc}>{desc}</div>
