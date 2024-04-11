@@ -16,7 +16,7 @@ div p {
 }
 
 .boy {
-    width: 18%;
+    width: 20%;
     height: auto;
     margin: 0;
     display: flex;
@@ -79,7 +79,8 @@ div p {
 }
 
 .desc {
-    text-align: left;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .statBtn {
@@ -87,6 +88,22 @@ div p {
     height: 20px;
     display: flex;
     align-self: center;
+}
+
+.descContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+div input {
+    margin-left: 5px;
+    background-color: #000300;
+    box-shadow: none;
+    border: 1px solid #00ee00;
+    width: min-content;
+    font-family: pipboy;
+    font-size: large;
 }
 
 

@@ -4,10 +4,8 @@ import createCSS from "./Create.module.css"
 
 function Create() {
 
-    const defaultMsg = "Overseer, it's time to assign SPECIAL stats to your custom Vault Dweller. "
-                        + "Choose wisely, as these stats will determine their abilities in the harsh Wasteland. "
-                        + "Will you prioritize Strength, Perception, Endurance, Charisma, Intelligence, Agility, or Luck? "
-                        + "Your decision will shape the future of your Vault Dweller."
+    const defaultMsg = "Choose wisely, as these stats will determine their abilities in the harsh Wasteland."
+                        + " Your decision will shape the future of your Vault Dweller."
     const maxPointPool = 33
     const maxPoints = 10
     const minPoints = 1
@@ -48,7 +46,7 @@ function Create() {
         ["Endurance", end, setEnd, "Endurance is a measure of your overall physical fitness. A high Endurance gives bonuses to health, environmental resistances, and the Survival and Unarmed skills."],
         ["Charisma", cha, setCha, "Having a high Charisma will improve people's disposition towards you, and give bonuses to both the Barter and Speech skills."],
         ["Intelligence", int, setInt, "Intelligence affects the Science, Repair and Medicine skills. The higher your Intelligence, the more Skill Points you'll be able to distribute when you level up."],
-        ["Agility", agi, setAgi, "Agility affects your Guns and Sneak skills, and the number of Action Points available for V.A.T.S."],
+        ["Agility", agi, setAgi, "Agility affects your Guns and Sneak skills, and the number of Action Points available for V.A.T.S. Higher agility also equates to faster movement speed."],
         ["Luck", luc, setLuc, "Raising your luck will raise all of your skills a little. Having a high Luck will also improve your critical chance with all weapons."]
     ]
 
@@ -76,7 +74,7 @@ function Create() {
                         <p>COPYRIGHT 2075-2077 ROBCO INDUSTRIES</p>
                         <p>-Server 8-</p>
                 </div>
-                <p>Before venturing into the Wasteland, ensure your Vault Dweller is properly prepared. 
+                <p>Before venturing into the Wasteland, ensure your Vault Dweller is properly prepared. It's time to assign SPECIAL stats to your custom Vault Dweller.
                 Utilize our cutting-edge genetic modification technology to customize your Dweller for optimal survival. 
                 Remember, a well-prepared Vault Dweller is a safer Vault Dweller.</p>        
                 <hr />
@@ -107,10 +105,14 @@ function Create() {
                     )}
 
                     <div className={createCSS.remaining}>Remaining Points: {pool}</div>
+                    <div className={createCSS.remaining}>Name: <input type="text"></input></div>
+                    <div className={createCSS.button}>{"> "}Create Character</div>
                     
                     </div>
-                    <div className={createCSS.desc}>{desc}</div>
-                    <img className={createCSS.boy} src="vault-boy-2.png"/>
+                    <div className={createCSS.descContainer}>
+                        <div className={createCSS.desc}>{desc}</div>
+                        <img className={createCSS.boy} src="vault-boy-2.png"/>
+                    </div>
                 </div>
             </div>
         </div>
