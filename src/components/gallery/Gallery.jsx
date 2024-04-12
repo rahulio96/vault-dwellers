@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { supabase } from '../../client'
 import GalleryCard from "./GalleryCard"
 import galleryCSS from "./Gallery.module.css"
+import createCSS from "../create/Create.module.css"
 
 function Gallery() {
 
@@ -22,7 +23,7 @@ function Gallery() {
 
     return (
         <>
-            <h1>Vault Dweller Gallery</h1>
+            <h1 className={createCSS.title}>Vault Dweller Gallery</h1>
             <div className={galleryCSS.container}>
                 {data && Object.entries(data).map(([dweller]) =>
                     <GalleryCard

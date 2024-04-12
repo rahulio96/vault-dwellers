@@ -85,7 +85,7 @@ function Create() {
     return (
         <>
         <div className={homeCSS.container}>
-            <h1 className={homeCSS.title}>Create a Vault Dweller</h1>
+            <h1 className={createCSS.title}>Create a Vault Dweller</h1>
             <div className={createCSS.terminal}>
                 <div className={homeCSS.sysInfo}>
                         <p>ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM</p>
