@@ -1,6 +1,7 @@
 import { useState } from "react"
 import homeCSS from "../home/Home.module.css"
 import createCSS from "./Create.module.css"
+import { supabase } from '../../client'
 
 function Create() {
 
@@ -29,6 +30,7 @@ function Create() {
         }
     }
 
+    const [name, setName] = useState("Vault Dweller")
     const [str, setStr] = useState(1)
     const [per, setPer] = useState(1)
     const [end, setEnd] = useState(1)
@@ -62,6 +64,22 @@ function Create() {
     const handleMouseLeave = () => {
         setIsHover(false)
         setDesc(defaultMsg)
+    }
+
+    const changeName = (e) => {
+        setName(e.target.value)
+    }
+
+    const createDweller = async (e) => {
+        e.preventDefault();
+
+        await supabase
+          .from('dwellers')
+          .insert({
+            name: name, strength: str, perception: per, endurance: end,
+            charisma: cha, intelligence: int, agility: agi, luck: luc
+            })
+          .select();
     }
 
     return (
@@ -105,8 +123,8 @@ function Create() {
                     )}
 
                     <div className={createCSS.remaining}>Remaining Points: {pool}</div>
-                    <div className={createCSS.remaining}>Name: <input type="text"></input></div>
-                    <div className={createCSS.button}>{"> "}Create Character</div>
+                    <div onChange={changeName} className={createCSS.remaining}>Name: <input placeholder="Vault Dweller" type="text"></input></div>
+                    <div onClick={createDweller} className={createCSS.button}>{"> "}Create Character</div>
                     
                     </div>
                     <div className={createCSS.descContainer}>
