@@ -19,7 +19,7 @@ function Gallery() {
         }
         fetchDwellers()
         
-    }, [data])
+    }, [])
 
     return (
         <>
