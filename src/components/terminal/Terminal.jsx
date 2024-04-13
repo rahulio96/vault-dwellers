@@ -105,6 +105,14 @@ function Terminal({s, p, e, c, i, a, l, phName, isCreate, id}) {
           .eq('id', id)
     }    
 
+    const deleteDweller = async (e) => {
+        e.preventDefault();
+        await supabase
+            .from('dwellers')
+            .delete()
+            .eq('id', id);
+    }
+
     return (
         <div className={createCSS.terminal}>
         <div className={homeCSS.sysInfo}>
@@ -143,6 +151,7 @@ function Terminal({s, p, e, c, i, a, l, phName, isCreate, id}) {
             <div className={createCSS.remaining}>Remaining Points: {pool}</div>
             <div onChange={changeName} className={createCSS.remaining}>Name: <input placeholder={phName} type="text"></input></div>
             <div onClick={isCreate ? createDweller : updateDweller} className={createCSS.button}>{"> "} {isCreate ? 'Create Character' : 'Update Character'}</div>
+            {isCreate ? <></> : <div className={createCSS.button} onClick={deleteDweller}>{"> "}Delete Character</div>}
             
             </div>
             <div className={createCSS.descContainer}>
