@@ -91,6 +91,8 @@ function Terminal({s, p, e, c, i, a, l, phName, isCreate, id}) {
             charisma: cha, intelligence: int, agility: agi, luck: luc
             })
           .select();
+
+          window.location = "/gallery";
     }
 
     const updateDweller = async (e) => {
@@ -103,6 +105,8 @@ function Terminal({s, p, e, c, i, a, l, phName, isCreate, id}) {
             charisma: cha, intelligence: int, agility: agi, luck: luc
             })
           .eq('id', id)
+
+          window.location = "/gallery";
     }    
 
     const deleteDweller = async (e) => {
@@ -111,6 +115,8 @@ function Terminal({s, p, e, c, i, a, l, phName, isCreate, id}) {
             .from('dwellers')
             .delete()
             .eq('id', id);
+
+        window.location = "/gallery";
     }
 
     return (
