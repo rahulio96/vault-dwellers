@@ -41,7 +41,7 @@ function Terminal({s, p, e, c, i, a, l, phName, isCreate, id}) {
         }
     }
 
-    const [name, setName] = useState("Vault Dweller")
+    const [name, setName] = useState(phName)
     const [str, setStr] = useState(s)
     const [per, setPer] = useState(p)
     const [end, setEnd] = useState(e)
