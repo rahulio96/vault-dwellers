@@ -119,6 +119,61 @@ function Terminal({s, p, e, c, i, a, l, phName, isCreate, id}) {
         window.location = "/gallery";
     }
 
+    const brawler = () => {
+        setStr(10)
+        setPer(3)
+        setEnd(8)
+        setCha(3)
+        setInt(3)
+        setAgi(7)
+        setLuc(6)
+        setPool(0)
+    }
+
+    const gambler = () => {
+        setStr(4)
+        setPer(5)
+        setEnd(4)
+        setCha(9)
+        setInt(5)
+        setAgi(3)
+        setLuc(10)
+        setPool(0)
+    }
+
+    const sharpshooter = () => {
+        setStr(7)
+        setPer(5)
+        setEnd(7)
+        setCha(1)
+        setInt(5)
+        setAgi(10)
+        setLuc(7)
+        setPool(0)
+    }
+
+    const scienceWizz = () => {
+        setStr(5)
+        setPer(5)
+        setEnd(5)
+        setCha(3)
+        setInt(10)
+        setAgi(5)
+        setLuc(7)
+        setPool(0)
+    }
+
+    const reset = () => {
+        setStr(1)
+        setPer(1)
+        setEnd(1)
+        setCha(1)
+        setInt(1)
+        setAgi(1)
+        setLuc(1)
+        setPool(33)
+    }
+
     return (
         <div className={createCSS.terminal}>
         <div className={homeCSS.sysInfo}>
@@ -158,11 +213,18 @@ function Terminal({s, p, e, c, i, a, l, phName, isCreate, id}) {
             <div onChange={changeName} className={createCSS.remaining}>Name: <input placeholder={phName} type="text"></input></div>
             <div onClick={isCreate ? createDweller : updateDweller} className={createCSS.button}>{"> "} {isCreate ? 'Create Character' : 'Update Character'}</div>
             {isCreate ? <></> : <div className={createCSS.button} onClick={deleteDweller}>{"> "}Delete Character</div>}
+            <div onClick={reset} className={createCSS.button}>{"> "} Reset SPECIAL</div>
             
             </div>
             <div className={createCSS.descContainer}>
                 <div className={createCSS.desc}>{desc}</div>
                 <img className={createCSS.boy} src="/vault-boy-2.png"/>
+                {isCreate ? <div className={createCSS.classes}>
+                    <div className={createCSS.button} onClick={gambler}>{"<"}Class: Gambler{">"}</div>
+                    <div className={createCSS.button} onClick={brawler}>{"<"}Class: Brawler{">"}</div>
+                    <div className={createCSS.button} onClick={sharpshooter}>{"<"}Class: Sharpshooter{">"}</div>
+                    <div className={createCSS.button} onClick={scienceWizz}>{"<"}Class: Science Wizz{">"}</div>
+                </div> : <></>}
             </div>
         </div>
     </div>

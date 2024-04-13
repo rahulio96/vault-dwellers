@@ -95,6 +95,13 @@ div p {
     align-self: center;
 }
 
+.classes {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+}
+
 .descContainer {
     display: flex;
     flex-direction: column;
