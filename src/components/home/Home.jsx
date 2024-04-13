@@ -1,13 +1,13 @@
-import Navbar from "../navbar/Navbar"
 import homeCSS from './Home.module.css'
+import createCSS from '../create/Create.module.css'
 import { Link } from "react-router-dom"
 
 function Home() {
     return (
         <>
             <div className={homeCSS.container}>
+                <h1 className={createCSS.title}>Welcome to Vault 98</h1>
                 <img className={homeCSS.logo} src="vault-tec-logo.png" />
-                <h1 className={homeCSS.title}>Welcome to Vault 98</h1>
                 <div className={homeCSS.terminal}>
                     <div className={homeCSS.sysInfo}>
                         <p>ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM</p>
