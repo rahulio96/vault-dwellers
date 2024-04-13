@@ -12,7 +12,7 @@ function Create() {
     return (
         <div className={homeCSS.container}>
             <h1 className={createCSS.title}>Create a Vault Dweller</h1>
-            <Terminal s={s} p={p} e={e} c={c} i={i} a={a} l={l} phName="Vault Dweller" />
+            <Terminal s={s} p={p} e={e} c={c} i={i} a={a} l={l} phName="Vault Dweller" isCreate={true} />
         </div>
     )
 }

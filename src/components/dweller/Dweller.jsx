@@ -16,7 +16,7 @@ function Dweller() {
                 .select()
                 .eq('id', params.id)
 
-                setData(data[0]) // Assuming there's only one dweller with this id
+                setData(data[0])
         }
         fetchDwellers()
     }, [params.id])
@@ -25,12 +25,12 @@ function Dweller() {
         return <></>
     }
 
-    const { strength: s, perception: p, endurance: e, charisma: c, intelligence: i, agility: a, luck: l, name: n } = data
+    const { strength: s, perception: p, endurance: e, charisma: c, intelligence: i, agility: a, luck: l, name: n, id: id } = data
 
     return (
         <div className={homeCSS.container}>
             <h1 className={createCSS.title}>Edit Vault Dweller</h1>
-            {data && <Terminal s={s} p={p} e={e} c={c} i={i} a={a} l={l} phName={n}/>}
+            {data && <Terminal s={s} p={p} e={e} c={c} i={i} a={a} l={l} phName={n} isCreate={false} id={id}/>}
         </div>
     )
 }

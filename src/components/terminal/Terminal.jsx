@@ -3,8 +3,16 @@ import homeCSS from "../home/Home.module.css"
 import createCSS from "../create/Create.module.css"
 import { supabase } from '../../client'
 
-function Terminal({s, p, e, c, i, a, l, phName}) {
-    
+function Terminal({s, p, e, c, i, a, l, phName, isCreate, id}) {
+
+    const createPrompt = "Before venturing into the Wasteland, ensure your Vault Dweller is properly prepared. It's time to assign SPECIAL stats to your custom Vault Dweller."+
+        "Utilize our cutting-edge genetic modification technology to customize your Dweller for optimal survival. "+
+        "Remember, a well-prepared Vault Dweller is a safer Vault Dweller."
+
+    const editPrompt = "Utilize our advanced technology to edit and modify your Vault Dweller's SPECIAL stats. "+
+        "With our cutting-edge tools, you can tailor their abilities to suit your needs. "+
+        "Ensure your Vault Dweller is optimized for success in the Wasteland by adjusting their stats as necessary"
+
     const defaultMsg = "Choose wisely, as these stats will determine their abilities in the harsh Wasteland."
                         + " Your decision will shape the future of your Vault Dweller."
     const maxPointPool = 33
@@ -85,6 +93,18 @@ function Terminal({s, p, e, c, i, a, l, phName}) {
           .select();
     }
 
+    const updateDweller = async (e) => {
+        e.preventDefault();
+
+        await supabase
+          .from('dwellers')
+          .update({
+            name: name, strength: str, perception: per, endurance: end,
+            charisma: cha, intelligence: int, agility: agi, luck: luc
+            })
+          .eq('id', id)
+    }    
+
     return (
         <div className={createCSS.terminal}>
         <div className={homeCSS.sysInfo}>
@@ -92,9 +112,7 @@ function Terminal({s, p, e, c, i, a, l, phName}) {
                 <p>COPYRIGHT 2075-2077 ROBCO INDUSTRIES</p>
                 <p>-Server 8-</p>
         </div>
-        <p>Before venturing into the Wasteland, ensure your Vault Dweller is properly prepared. It's time to assign SPECIAL stats to your custom Vault Dweller.
-        Utilize our cutting-edge genetic modification technology to customize your Dweller for optimal survival. 
-        Remember, a well-prepared Vault Dweller is a safer Vault Dweller.</p>        
+        <p>{isCreate ? createPrompt : editPrompt}</p>        
         <hr />
         <div className={createCSS.stats}>
             <div className={createCSS.btnContainer}>
@@ -124,7 +142,7 @@ function Terminal({s, p, e, c, i, a, l, phName}) {
 
             <div className={createCSS.remaining}>Remaining Points: {pool}</div>
             <div onChange={changeName} className={createCSS.remaining}>Name: <input placeholder={phName} type="text"></input></div>
-            <div onClick={createDweller} className={createCSS.button}>{"> "}Create Character</div>
+            <div onClick={isCreate ? createDweller : updateDweller} className={createCSS.button}>{"> "} {isCreate ? 'Create Character' : 'Update Character'}</div>
             
             </div>
             <div className={createCSS.descContainer}>
