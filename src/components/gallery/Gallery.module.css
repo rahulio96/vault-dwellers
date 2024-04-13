@@ -15,12 +15,17 @@
     border: 3px solid #ebc852;
     border-radius: 25px;
     width: max-content;
+    color: #00ee00;
+    cursor: pointer;
+}
+
+.card:hover {
+    color:#009e00;
 }
 
 .cardText {
     font-size: large;
     padding: 0;
-    color: #00ee00;
     list-style: none;
     text-align: left;
 }
