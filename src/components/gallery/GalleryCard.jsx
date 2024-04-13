@@ -1,8 +1,9 @@
 import galleryCSS from "./Gallery.module.css"
+import { Link } from "react-router-dom"
 
-function GalleryCard({ name, str, per, end, cha, int, agi, luc }) {
+function GalleryCard({ id, name, str, per, end, cha, int, agi, luc }) {
     return (
-        <>
+        <Link to={`/dweller/${id}`}>
             <div className={galleryCSS.card}>
                 <ul className={galleryCSS.cardText}>
                     <li>Name: {name}</li>
@@ -16,7 +17,7 @@ function GalleryCard({ name, str, per, end, cha, int, agi, luc }) {
                 </ul>
                 <img className={galleryCSS.cardImg} src="vault-boy.jpg"/>  
             </div>
-        </>
+        </Link>
     )
 }
 

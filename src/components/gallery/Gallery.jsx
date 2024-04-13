@@ -27,8 +27,9 @@ function Gallery() {
             <div className={galleryCSS.container}>
                 {data && Object.entries(data).map(([dweller]) =>
                     <GalleryCard
-                        key = {data[dweller].id}
-                        name = {data[dweller].name}
+                        key={data[dweller].id}
+                        id={data[dweller].id}
+                        name={data[dweller].name}
                         str={data[dweller].strength}
                         per={data[dweller].perception}
                         end={data[dweller].endurance}

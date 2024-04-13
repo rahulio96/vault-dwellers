@@ -3,14 +3,17 @@ import homeCSS from "../home/Home.module.css"
 import createCSS from "../create/Create.module.css"
 import { supabase } from '../../client'
 
-function Terminal() {
+function Terminal({s, p, e, c, i, a, l, phName}) {
     
     const defaultMsg = "Choose wisely, as these stats will determine their abilities in the harsh Wasteland."
                         + " Your decision will shape the future of your Vault Dweller."
     const maxPointPool = 33
     const maxPoints = 10
     const minPoints = 1
-    const [pool, setPool] = useState(33)
+
+    const max = 40-(s+p+e+c+i+a+l)
+
+    const [pool, setPool] = useState(max)
 
     const addPoint = (num, setNum) => {
         let cur = num + 1
@@ -31,13 +34,13 @@ function Terminal() {
     }
 
     const [name, setName] = useState("Vault Dweller")
-    const [str, setStr] = useState(1)
-    const [per, setPer] = useState(1)
-    const [end, setEnd] = useState(1)
-    const [cha, setCha] = useState(1)
-    const [int, setInt] = useState(1)
-    const [agi, setAgi] = useState(1)
-    const [luc, setLuc] = useState(1)
+    const [str, setStr] = useState(s)
+    const [per, setPer] = useState(p)
+    const [end, setEnd] = useState(e)
+    const [cha, setCha] = useState(c)
+    const [int, setInt] = useState(i)
+    const [agi, setAgi] = useState(a)
+    const [luc, setLuc] = useState(l)
 
     const [hoverPlus, setHoverPlus] = useState(null)
     const [hoverMin, setHoverMin] = useState(null)
@@ -102,7 +105,7 @@ function Terminal() {
                     {stat[0]}
                     <div className={createCSS.number}>
                         <img className={createCSS.statBtn} 
-                            src={index === hoverMin ? 'minus-hover.png' : 'minus.png'} 
+                            src={index === hoverMin ? '/minus-hover.png' : '/minus.png'} 
                             onMouseEnter={() => setHoverMin(index)}
                             onMouseLeave={() => setHoverMin(null)}
                             onClick={() => subPoint(stat[1], stat[2])}
@@ -110,7 +113,7 @@ function Terminal() {
                         <div className={createCSS.statNum}>{stat[1]}</div>
                         
                         <img className={createCSS.statBtn} 
-                            src={index === hoverPlus ? 'plus-hover.png' : 'plus.png'} 
+                            src={index === hoverPlus ? '/plus-hover.png' : '/plus.png'} 
                             onMouseEnter={() => setHoverPlus(index)}
                             onMouseLeave={() => setHoverPlus(null)}
                             onClick={() => addPoint(stat[1], stat[2])}
@@ -120,13 +123,13 @@ function Terminal() {
             )}
 
             <div className={createCSS.remaining}>Remaining Points: {pool}</div>
-            <div onChange={changeName} className={createCSS.remaining}>Name: <input placeholder="Vault Dweller" type="text"></input></div>
+            <div onChange={changeName} className={createCSS.remaining}>Name: <input placeholder={phName} type="text"></input></div>
             <div onClick={createDweller} className={createCSS.button}>{"> "}Create Character</div>
             
             </div>
             <div className={createCSS.descContainer}>
                 <div className={createCSS.desc}>{desc}</div>
-                <img className={createCSS.boy} src="vault-boy-2.png"/>
+                <img className={createCSS.boy} src="/vault-boy-2.png"/>
             </div>
         </div>
     </div>
