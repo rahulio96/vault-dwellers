@@ -1,20 +1,21 @@
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 150px;
+    gap: 50px;
     row-gap: 50px;
     font-family: pipboy;
+     width: 100%;
 }
 
 .card {
-    display: flex;
+    display: block;
     justify-self: center;
     align-items: center;
     background-color: #000300;
     padding: 10px;
     border: 3px solid #ebc852;
     border-radius: 25px;
-    width: max-content;
+    width: fit-content;
     color: #00ee00;
     cursor: pointer;
 }
@@ -31,13 +32,12 @@
 }
 
 .cardImg {  
-    width: 150px;
-    height: auto;
+    max-height: 70%;
+    max-width: 70%;
 }
 
 @media only screen and (max-width: 768px) {
     .container {
-        flex-direction: column;
         width: 100%;
     }
 

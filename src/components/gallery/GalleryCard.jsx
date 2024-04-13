@@ -3,10 +3,11 @@ import { Link } from "react-router-dom"
 
 function GalleryCard({ id, name, str, per, end, cha, int, agi, luc }) {
     return (
-        <Link to={`/dweller/${id}`}>
-            <div className={galleryCSS.card}>
+            <Link to={`/dweller/${id}`} className={galleryCSS.card}>
+                <div className={galleryCSS.cardContent}>
+                <img className={galleryCSS.cardImg} src="vault-boy.jpg"/>
                 <ul className={galleryCSS.cardText}>
-                    <li>Name: {name}</li>
+                    <li style={{color: "white"}}>Name: {name}</li>
                     <li>Strength: {str}</li>
                     <li>Perception: {per}</li>
                     <li>Endurance: {end}</li>
@@ -15,9 +16,9 @@ function GalleryCard({ id, name, str, per, end, cha, int, agi, luc }) {
                     <li>Agility: {agi}</li>
                     <li>Luck: {luc}</li> 
                 </ul>
-                <img className={galleryCSS.cardImg} src="vault-boy.jpg"/>  
-            </div>
-        </Link>
+                
+                </div>
+            </Link>
     )
 }
 
